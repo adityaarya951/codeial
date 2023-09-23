@@ -8,6 +8,8 @@ const port = 3001;
 //^ we will be using express router for managing all our routes
 //^ humari koi bhi req hogi wo seedha routes pe jaegi 
 app.use('/', require('./routes'));
+app.set('view engine', 'ejs');
+app.set('views', './views');
 app.listen(port, function(err){
     if(err){
         console.log(`error in running the server: ${err}`);
