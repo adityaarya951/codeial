@@ -4,5 +4,8 @@
 
 //^ hum export kar rahe hain homenaam ki file 
 module.exports.home = function(req,res){
-    return res.send('<h1> express server is up and running</h1>')
+    //* return res.send('<h1> express server is up and running</h1>')
+    return res.render('home',{
+        title: "Home"
+    });
 }

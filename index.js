@@ -8,6 +8,7 @@ const port = 3001;
 //^ we will be using express router for managing all our routes
 //^ humari koi bhi req hogi wo seedha routes pe jaegi 
 app.use('/', require('./routes'));
+//^ when we have case sensitive routes we use app.set , else app.use
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.listen(port, function(err){
