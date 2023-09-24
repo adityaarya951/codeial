@@ -1,0 +1,23 @@
+<!--^ ye humari layout file hai iss file me humara saara repeat hone waala html code rehta hai web page ka  -->
+<!--^ jaise ki footer header , halaki unn ki file alag se likhi hui hai  -->
+<!--^ header footer ki , par hum daalte layouts me hain  -->
+
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/layout.css">
+    </head>
+    <body>
+        <!--^ this is how we include partials  -->
+        <!--^ header partial -->
+        <%- include('_header'); %>
+
+        <!--^ sirf ye waala part variable hota hai jo web page ke sath load hota hai  -->
+        <%- body%>
+
+        <!--^ footer partial -->
+        <%- include('_footer'); %>
+    </body>
+</html>
