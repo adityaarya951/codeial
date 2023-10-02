@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
+const cookieParser = require('cookie-parser');
 const port = 3001;
 const expressLayouts = require('express-ejs-layouts');
+const db = require("./config/mongoose");
 //^ hum layouts ka use kar rahe hain to jo bhi humari repeating cheeze hain wo layouts me 
 //^ rahengi , jaise footer , header , hume files me sirf variable part likhna hai 
 //^ body waala baaki sab apne aap layout.ejs se aa jaega 
 
+// we will be putting the data we get in the post request in the body and will directly put into the db
+app.use(express.urlencoded());
 
+app.use(cookieParser());
 //^ express.static is used to acess all the static files 
 //^ these static files has media, js , css
 app.use(express.static('./assets'))
