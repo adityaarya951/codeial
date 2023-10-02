@@ -2,4 +2,5 @@ body{
     /*^ body comes with some margin and we are removing that automatic margin */
     margin:0;
     text-align:center;
+    background-color: aquamarine;
 }

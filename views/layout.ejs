@@ -8,6 +8,9 @@
             <%= title %>
         </title>
         <link rel="stylesheet" href="/css/layout.css">
+        <!-- here css files of the pages will render -->
+        <%-style%>
+        
     </head>
     <body>
         <!--^ this is how we include partials  -->
@@ -19,5 +22,6 @@
 
         <!--^ footer partial -->
         <%- include('_footer'); %>
+        <%- script%>
     </body>
 </html>

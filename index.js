@@ -1,16 +1,20 @@
 const express = require('express');
 const app = express();
 const port = 3001;
-const expresslayouts = require('express-ejs-layouts');
+const expressLayouts = require('express-ejs-layouts');
 //^ hum layouts ka use kar rahe hain to jo bhi humari repeating cheeze hain wo layouts me 
 //^ rahengi , jaise footer , header , hume files me sirf variable part likhna hai 
 //^ body waala baaki sab apne aap layout.ejs se aa jaega 
-app.use(expresslayouts);
+
 
 //^ express.static is used to acess all the static files 
 //^ these static files has media, js , css
 app.use(express.static('./assets'))
-
+// we are using this because we will be having the css files of each file and we dont want that link of the 
+// file to be shown in the body of the file , we want it to be in the hgead and for that we use this middleware 
+app.use(expressLayouts);
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 //^ we will be using express router for managing all our routes
 //^ humari koi bhi req hogi wo seedha routes pe jaegi 
@@ -28,4 +32,4 @@ app.listen(port, function(err){
         console.log(`error in running the server: ${err}`);
     }
     console.log(`server is running on the port: ${port}`);
-})
+});
